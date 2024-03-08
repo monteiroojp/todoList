@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Script-->
+  <script src="script.js" defer></script>
   <!--CSS-->
   <link rel="stylesheet" href="estilos/style.css">
   <!--Font(icons)-->
@@ -14,7 +16,7 @@
     <h1>Lista de Tarefas</h1>
     <div class="adc-task">
       <h2>Adicionar tarefa</h2>
-      <form action="#" class="adcTaskForm">
+      <form action="#" class="adcTaskForm" autocomplete="off">
         <input type="text" id="inputTaskText" class="input">
         <button type="submit" class="button" id="adcButton">
           <span class="material-symbols-outlined">add_task
@@ -24,22 +26,15 @@
     </div>
     <div class="edit-task hidden">
       <h2>Editar tarefa</h2>
-      <form action="#" class="editTaskForm">
-        <input type="text"  id="inputEditTaskText" class="input">
+      <form action="#" class="editTaskForm" autocomplete="off">
+        <input type="text"  id="inputEditTask" class="input">
         <button type="submit" class="button">
           <span class="material-symbols-outlined">library_add_check</span>
         </button>
-        <button type="submit" class="button" id="cancelButton">Cancelar</button>
       </form>
+      <button class="button" id="cancelButton">Cancelar</button>
     </div>
-    <div class="tasksContainer">
-      <div class="task">
-        <h3>Olá</h3>
-        <button class="button">Feita</button>
-        <button class="button">Editar</button>
-        <button class="button">Remover</button>
-      </div>
-    </div>
+    <div class="tasksContainer"></div>
   </main>
   
 </body>

@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+/*Geral*/
+
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: grey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+main{
+    background-color: black;
+    padding: 0rem 2rem 2rem 1rem;
+    border-radius: 10px; 
+    box-shadow: 4px 5px 8px 0px rgba(0, 0, 0, 0.301);
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+main h1{
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+
+button{
+    padding: 0.1rem;
+    background-color: #49EB85;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #9BEBCC;
+}
+
+button span{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+input{
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    border: none;
+}
+
+h2{
+    color: white;
+    margin-bottom: 30px;
+    margin-right: 60px;
+}
+
+h3{
+    color: white;
+    max-width: 60%;
+}
+
+.edit{
+    background-color: yellow;
+}
+
+.edit:hover{
+    background-color: rgb(218, 218, 131);
+}
+
+.delete{
+    background-color: red;
+}
+
+.delete:hover{
+    background-color: rgb(230, 99, 99);
+}
+
+
+/*Adc-task-div*/
+
+div.adc-task{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+
+form.adcTaskForm{
+    display: flex;
+    gap: 30px;
+} 
+
+/*Edit-task-div*/
+
+div.edit-task{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+
+div.edit-task h2{
+    text-align: center;
+}
+
+form.editTaskForm{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-bottom: 15px;
+    margin-left: 15px;
+}
+
+button#cancelButton{
+    align-self: flex-start;
+    width: 120px;
+    height: 30px;
+    margin-left: 30px;
+    color: black;
+}
+
+.hidden{
+    display: none;
+}
+
+/*Tasks-Container*/
+
+.tasksContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+}
+
+.tasksContainer:nth-child(1){
+    background-color: green;
+}
+
+div.task{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 1rem;
+}
+
+div.buttons{
+    display: flex;
+    gap: 5px;
+    height: 35px;
+    width: 50%;
+}
+
+div.task h3{
+    margin-top: 6px;
+    margin-right: 20px;
+    width: 50%;
+    overflow: hidden;
+}
+
+.doneTask{
+    background-color: rgb(97, 228, 97);
+    text-decoration: line-through;
+    color: black;
+}
