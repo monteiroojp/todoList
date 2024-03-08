@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--CSS-->
+  <link rel="stylesheet" href="estilos/style.css">
+  <!--Font(icons)-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1>Lista de Tarefas</h1>
+    <div class="adc-task">
+      <h2>Adicionar tarefa</h2>
+      <form action="#" class="adcTaskForm">
+        <input type="text" id="inputTaskText" class="input">
+        <button type="submit" class="button" id="adcButton">
+          <span class="material-symbols-outlined">add_task
+        </span>
+      </button>
+      </form>
+    </div>
+    <div class="edit-task hidden">
+      <h2>Editar tarefa</h2>
+      <form action="#" class="editTaskForm">
+        <input type="text"  id="inputEditTaskText" class="input">
+        <button type="submit" class="button">
+          <span class="material-symbols-outlined">library_add_check</span>
+        </button>
+        <button type="submit" class="button" id="cancelButton">Cancelar</button>
+      </form>
+    </div>
+    <div class="tasksContainer">
+      <div class="task">
+        <h3>Olá</h3>
+        <button class="button">Feita</button>
+        <button class="button">Editar</button>
+        <button class="button">Remover</button>
+      </div>
+    </div>
+  </main>
+  
+</body>
+</html>
