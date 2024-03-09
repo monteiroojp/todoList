@@ -8,7 +8,7 @@ let newTaskInput = document.getElementById('inputTaskText')
 
 const editTaskDiv = document.querySelector('.edit-task')
 const editTaskInput = document.getElementById('inputEditTask')
-
+let oldinputValue;
 //Tasks-area
 
 let tasksContainer = document.querySelector('.tasksContainer')
@@ -69,20 +69,17 @@ const doneAndDelete = (divTask, n) =>{
    }
 }
 
-const editTask = (currentTittle) =>{
-    console.log(currentTittle)
-    let newTittle = editTaskInput.value
+const editTask = (newText) => {
+    const todos = document.querySelectorAll('.task');
 
-    if(newTittle == ''){
-        window.alert('Preencha o novo título antes de editar a tarefa!')
-    }
-
-    else{
-        currentTittle.innerHTML = newTittle
-        editTaskDiv.classList.toggle('hidden')
-        editTaskInput.value = ''
-    }
-}
+    todos.forEach((task) => {
+        const taskTitle = task.querySelector('h3');
+        console.log(taskTitle)
+        if (taskTitle.innerText === oldinputValue.innerText) {
+            taskTitle.innerText = newText;
+        }
+    });
+};
 
 
 /*Event listeners*/
@@ -100,9 +97,9 @@ adcTasksDiv.addEventListener('submit' , (e) =>{
 
 tasksContainer.addEventListener('click' , (e) =>{
 let n;   
-let divButtons = e.target.parentNode
-let divTask = divButtons.parentNode 
-let curentTitle;
+let divButtons = e.target.closest('div')
+let divTask = divButtons.parentNode
+let currentTitle;
 
     if(e.target.classList.contains('done')){
         n = 1
@@ -116,17 +113,26 @@ let curentTitle;
 
     else if(e.target.classList.contains('edit')){
         editTaskDiv.classList.toggle('hidden')
-        
-        cancelButton.addEventListener('click' , (e) =>{
-            e.preventDefault
-            curentTitle = divTask.querySelector('h3')
-            editTaskDiv.classList.add('hidden')
-        })
-
-        editTaskDiv.addEventListener('submit', (e) =>{
-            e.preventDefault()
-            editTask(curentTitle)
-        })
-
+        currentTitle = divTask.querySelector('h3')
+        editTaskInput.value = currentTitle.textContent
+        oldinputValue = currentTitle
+        console.log(oldinputValue)
     }
+})
+
+cancelButton.addEventListener('click' , (e) =>{
+    e.preventDefault
+    editTaskDiv.classList.toggle('hidden')
+})
+
+editTaskDiv.addEventListener('submit', (e) =>{
+    e.preventDefault()
+
+    const editInputvalue = editTaskInput.value
+
+    if(editInputvalue){
+        editTask(editInputvalue)
+    }
+
+    editTaskDiv.classList.toggle('hidden')
 })
