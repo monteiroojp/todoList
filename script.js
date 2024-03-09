@@ -102,7 +102,7 @@ tasksContainer.addEventListener('click' , (e) =>{
 let n;   
 let divButtons = e.target.parentNode
 let divTask = divButtons.parentNode 
-let curentTitle = e.target.closest('.task').querySelector('h3')
+let curentTitle;
 
     if(e.target.classList.contains('done')){
         n = 1
@@ -119,11 +119,12 @@ let curentTitle = e.target.closest('.task').querySelector('h3')
         
         cancelButton.addEventListener('click' , (e) =>{
             e.preventDefault
+            curentTitle = divTask.querySelector('h3')
             editTaskDiv.classList.add('hidden')
         })
 
         editTaskDiv.addEventListener('submit', (e) =>{
-
+            e.preventDefault()
             editTask(curentTitle)
         })
 
